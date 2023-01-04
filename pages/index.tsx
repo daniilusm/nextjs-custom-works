@@ -1,4 +1,4 @@
-import BasicLayout from 'components/layout/basic';
+import BasicLayout from '../components/layout/basic';
 import styled from 'styled-components';
 import Head from '../node_modules/next/head';
 
