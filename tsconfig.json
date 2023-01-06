@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
+    "baseUrl": "./",
     "lib": [
       "dom",
       "dom.iterable",
@@ -15,8 +16,21 @@
     "esModuleInterop": true,
     "module": "esnext",
     "resolveJsonModule": true,
+    "moduleResolution": "node",
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "@types": ["styles/types"],
+      "@color/*": ["styles/color"],
+      "media/*": ["styles/media"],
+      "utils/*": ["utils/*"],
+      "hooks/*": ["hooks/*"],
+      "pages/*": ["pages/*"],
+      "components/*": ["components/*"],
+      "styles/*": ["styles/*"],
+      "images/*": ["assets/images/*"],
+      "assets/*": ["assets/*"]
+    }
   },
   "include": [
     "next-env.d.ts",

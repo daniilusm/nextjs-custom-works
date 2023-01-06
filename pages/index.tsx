@@ -1,6 +1,6 @@
-import BasicLayout from '../components/layout/basic';
+import BasicLayout from 'components/Layouts/Basic';
+import Head from 'next/head';
 import styled from 'styled-components';
-import Head from '../node_modules/next/head';
 
 const Title = styled.h1`
   color: red;
@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>My page title</title>
+        <title>Title MF</title>
       </Head>
       <BasicLayout>
         <p>hello</p>
