@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Colors } from 'styles/colors';
 
-export const Root = styled.div`
+export const Root = styled.div<{ shadow: number }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,18 +14,12 @@ export const Root = styled.div`
   padding: 3px;
   position: relative;
   border-radius: 6px;
-  color: rgb(88 199 250 / 0%);
   cursor: pointer;
 
   @property --rotate {
     syntax: '<angle>';
-    initial-value: 132deg;
+    initial-value: ${({ shadow }) => shadow && `${shadow}deg`};
     inherits: false;
-  }
-
-  &:hover {
-    color: rgb(88 199 250 / 100%);
-    transition: color 1s;
   }
 
   &:hover:before,
@@ -54,7 +48,7 @@ export const Root = styled.div`
   &::after {
     position: absolute;
     content: '';
-    top: calc(500px / 6);
+    top: 0;
     left: 0;
     right: 0;
     z-index: -1;
@@ -62,15 +56,13 @@ export const Root = styled.div`
     width: 100%;
     margin: 0 auto;
     transform: scale(0.8);
-    filter: blur(calc(500px / 6));
+    filter: blur(100px);
     background-image: linear-gradient(
       var(--rotate),
       #5ddcff,
       #3c67e3 43%,
       #4e00c2
     );
-    opacity: 1;
-    transition: opacity 0.5s;
     animation: spin 2.5s linear infinite;
   }
 
