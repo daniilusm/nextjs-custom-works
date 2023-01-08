@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
 import * as S from './PageCard.styled';
+import useToggle from 'hooks/useToggle';
 
 type Props = {
   item: {
@@ -14,6 +15,7 @@ type Props = {
 const PageCard = ({ item }: Props) => {
   const $card = useRef<HTMLDivElement>(null);
   const [mousePositionDeg, setMousePositionDeg] = useState<number>(132);
+  const [isViewCard, toggleViewCard] = useToggle(false);
 
   useEffect(() => {
     const card = $card.current;
@@ -28,12 +30,22 @@ const PageCard = ({ item }: Props) => {
   }, []);
 
   return (
-    <Link href={item.route}>
-      <S.Root ref={$card} shadow={mousePositionDeg}>
-        <S.Title>{item.title}</S.Title>
-        <S.Description>{item.description}</S.Description>
-      </S.Root>
-    </Link>
+    <S.Root
+      ref={$card}
+      shadow={mousePositionDeg}
+      isViewCard={isViewCard}
+      onClick={toggleViewCard}
+    >
+      <S.Title>{item.title}</S.Title>
+      {isViewCard && (
+        <>
+          <S.Description>{item.description}</S.Description>
+          <Link href={item.route}>
+            <S.ViewMore>view page</S.ViewMore>
+          </Link>
+        </>
+      )}
+    </S.Root>
   );
 };
 

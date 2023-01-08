@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Colors } from 'styles/colors';
 
-export const Root = styled.div<{ shadow: number }>`
+export const Root = styled.div<{ shadow: number; isViewCard: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,22 +9,18 @@ export const Root = styled.div<{ shadow: number }>`
   text-align: center;
 
   background: ${Colors.nero};
-  width: 350px;
-  height: 250px;
+  width: ${({ isViewCard }) => (isViewCard ? '900px' : '350px')};
+  height: ${({ isViewCard }) => (isViewCard ? '400px' : '250px')};
   padding: 3px;
   position: relative;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: ${({ isViewCard }) => (isViewCard ? 'default' : 'pointer')};
+  transition: all 0.5s;
 
   @property --rotate {
     syntax: '<angle>';
     initial-value: ${({ shadow }) => shadow && `${shadow}deg`};
     inherits: false;
-  }
-
-  &:hover:before,
-  &:hover:after {
-    animation: none;
   }
 
   &::before {
@@ -33,7 +29,8 @@ export const Root = styled.div<{ shadow: number }>`
     height: 104%;
     border-radius: 8px;
     background-image: linear-gradient(
-      var(--rotate),
+      ${({ shadow, isViewCard }) =>
+        isViewCard ? 'var(--rotate)' : shadow && `${shadow}deg`},
       #5ddcff,
       #3c67e3 43%,
       #4e00c2
@@ -42,7 +39,8 @@ export const Root = styled.div<{ shadow: number }>`
     z-index: -1;
     top: -2%;
     left: -2%;
-    animation: spin 2.5s linear infinite;
+    animation: ${({ isViewCard }) =>
+      isViewCard ? 'spin 2.5s linear infinite' : 'none'};
   }
 
   &::after {
@@ -58,12 +56,14 @@ export const Root = styled.div<{ shadow: number }>`
     transform: scale(0.8);
     filter: blur(100px);
     background-image: linear-gradient(
-      var(--rotate),
+      ${({ shadow, isViewCard }) =>
+        isViewCard ? 'var(--rotate)' : shadow && `${shadow}deg`},
       #5ddcff,
       #3c67e3 43%,
       #4e00c2
     );
-    animation: spin 2.5s linear infinite;
+    animation: ${({ isViewCard }) =>
+      isViewCard ? 'spin 2.5s linear infinite' : 'none'};
   }
 
   @keyframes spin {
@@ -82,4 +82,9 @@ export const Title = styled.h2`
 
 export const Description = styled.p`
   color: ${Colors.white};
+`;
+
+export const ViewMore = styled.p`
+  color: ${Colors.white};
+  cursor: pointer;
 `;

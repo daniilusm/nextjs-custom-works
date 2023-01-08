@@ -1,6 +1,8 @@
 export enum Colors {
   nero = '#212121',
-  freeSpeechMagenta = '#df21dd',
+  chantilly = '#eeaeca',
+  cornflower = '#94bbe9',
+  moonRaker = '#c2b4d9',
   gallery = '#ededed',
   burningOrange = '#ff9696',
   mineShaft = '#333333',
