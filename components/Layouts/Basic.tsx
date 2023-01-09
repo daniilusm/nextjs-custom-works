@@ -12,10 +12,11 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
   height: 100vh;
+  padding: 50px;
 `;
 
 const BasicLayout = ({ children, title }: Props) => {

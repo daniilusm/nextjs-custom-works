@@ -48,10 +48,12 @@ export const Root = styled.div<{ isViewCard: boolean }>`
 
 export const Title = styled.h2`
   color: ${Colors.white};
+  font-size: 42px;
 `;
 
 export const Description = styled.p`
   color: ${Colors.white};
+  margin: 40px 0 20px;
 `;
 
 export const ViewMore = styled(Link)`

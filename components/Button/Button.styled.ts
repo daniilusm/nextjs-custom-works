@@ -15,7 +15,6 @@ export const Root = styled.div<{
   border-radius: 8px;
   background: ${Colors.nero};
   cursor: pointer;
-  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
