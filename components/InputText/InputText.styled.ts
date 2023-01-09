@@ -5,7 +5,7 @@ export const Root = styled.div`
   position: relative;
   padding: 15px 0 0;
   margin-top: 10px;
-  width: 50%;
+  min-width: 350px;
 `;
 
 export const Label = styled.label`
