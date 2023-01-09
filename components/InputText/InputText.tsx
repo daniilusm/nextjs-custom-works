@@ -6,7 +6,7 @@ type Props = {
   isRequired?: boolean;
   value: string;
   handleChange?: (value: string) => void;
-  onKeyEvent: (event: KeyboardEvent) => void;
+  onKeyEvent?: (event: KeyboardEvent) => void;
 };
 
 const InputText = ({
@@ -24,7 +24,7 @@ const InputText = ({
         name={name}
         id={name}
         required={isRequired}
-        onChange={(e) => handleChange(e.target.value)}
+        onChange={handleChange ? (e) => handleChange(e.target.value) : () => {}}
         onKeyDown={onKeyEvent}
         value={value}
       />

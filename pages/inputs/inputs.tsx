@@ -5,7 +5,7 @@ import React from 'react';
 const inputs = () => {
   return (
     <BasicLayout title="Inputs">
-      <InputText name="Text" />
+      <InputText name="Text" value="" />
     </BasicLayout>
   );
 };
