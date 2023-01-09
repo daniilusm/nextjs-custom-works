@@ -6,29 +6,35 @@ import Head from 'next/head';
 const cardItems = [
   {
     id: 1,
-    title: 'UI',
-    route: '/ui',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, repudiandae minima. Cupiditate possimus ut nam.',
+    title: 'Photo data',
+    route: '/photo',
+    description: 'Return photo data by only url',
   },
   {
     id: 2,
     title: 'Buttons',
-    route: '/ui',
+    route: '/buttons',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, repudiandae minima. Cupiditate possimus ut nam.',
   },
   {
     id: 3,
     title: 'Inputs',
-    route: '/ui',
+    route: '/inputs',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, repudiandae minima. Cupiditate possimus ut nam.',
   },
   {
     id: 4,
-    title: 'Hovers',
-    route: '/ui',
+    title: 'Photos slider',
+    route: '/slider',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, repudiandae minima. Cupiditate possimus ut nam.',
+  },
+  {
+    id: 5,
+    title: 'Drag&Drop',
+    route: '/dnd',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, repudiandae minima. Cupiditate possimus ut nam.',
   },

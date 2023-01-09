@@ -1,10 +1,14 @@
 import React from 'react';
 import * as S from './Button.styled';
 
-const Button = () => {
+type Props = {
+  children: any;
+};
+
+const Button = ({ children }: Props) => {
   return (
     <S.Root>
-      <S.Text>Text</S.Text>
+      <S.Text>{children}</S.Text>
     </S.Root>
   );
 };
