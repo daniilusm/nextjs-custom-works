@@ -14,29 +14,25 @@ const cardItems = [
     id: 2,
     title: 'Buttons',
     route: '/buttons',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, repudiandae minima. Cupiditate possimus ut nam.',
+    description: 'Exemple button styles',
   },
   {
     id: 3,
     title: 'Inputs',
     route: '/inputs',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, repudiandae minima. Cupiditate possimus ut nam.',
+    description: 'Some exemples input elements',
   },
   {
     id: 4,
     title: 'Photos slider',
     route: '/slider',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, repudiandae minima. Cupiditate possimus ut nam.',
+    description: 'Photos slider with dots',
   },
   {
     id: 5,
     title: 'Drag&Drop',
     route: '/dnd',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, repudiandae minima. Cupiditate possimus ut nam.',
+    description: 'Drag and drop elements',
   },
 ];
 
