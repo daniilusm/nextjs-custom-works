@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 type Props = {
   children: any;
+  title: string;
 };
 
 const Container = styled.div`
@@ -17,10 +18,10 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-const BasicLayout = ({ children }: Props) => {
+const BasicLayout = ({ children, title }: Props) => {
   return (
     <Container>
-      <Header />
+      <Header title={title} />
       {children}
     </Container>
   );

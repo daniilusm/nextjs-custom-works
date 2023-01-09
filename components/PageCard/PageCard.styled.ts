@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Colors } from 'styles/colors';
+import Link from 'next/link';
 
 export const Root = styled.div<{ isViewCard: boolean }>`
   display: flex;
@@ -53,7 +54,6 @@ export const Description = styled.p`
   color: ${Colors.white};
 `;
 
-export const ViewMore = styled.p`
-  color: ${Colors.white};
-  cursor: pointer;
+export const ViewMore = styled(Link)`
+  z-index: 1;
 `;

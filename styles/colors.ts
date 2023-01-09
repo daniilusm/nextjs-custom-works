@@ -37,7 +37,8 @@ export enum Colors {
   softViolet = '#be8ffd',
   veryPaleBlue = '#fcfcff',
   lightGrayishBlue = '#e7e4f7',
-  lightRed = '#ff6161',
+  lightRed = '#f62b2b',
+  redWine = '#a22020',
   lightOrange = '#ffc148',
   manatee = '#929398',
   linkWater = '#F2EFFB',
@@ -76,6 +77,7 @@ export enum Colors {
   // color picker colors
   coral = '#FF8044',
   hotPink = '#FE68CB',
+  veryHotPink = '#f50aa5',
   carnation = '#F95C5C',
   heliotrope = '#C664F4',
   aquamarine = '#6AF6FF',

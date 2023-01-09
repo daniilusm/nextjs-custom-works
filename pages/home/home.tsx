@@ -46,7 +46,7 @@ const Home = () => {
       <Head>
         <title>Title MF</title>
       </Head>
-      <BasicLayout>
+      <BasicLayout title="Welcome">
         <Slider>
           {cardItems.map((item) => (
             <PageCard key={item.id} item={item} />

@@ -21,6 +21,10 @@ html {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   background-color: ${Colors.nero};
 }
