@@ -22,10 +22,9 @@ const InputText = ({
         type="input"
         placeholder={name}
         name={name}
-        id={name}
         required={isRequired}
         onChange={handleChange ? (e) => handleChange(e.target.value) : () => {}}
-        onKeyDown={onKeyEvent}
+        onKeyPress={onKeyEvent}
         value={value}
       />
       <S.Label>{name}</S.Label>

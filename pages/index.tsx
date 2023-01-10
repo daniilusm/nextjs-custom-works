@@ -6,9 +6,9 @@ import Head from 'next/head';
 const cardItems = [
   {
     id: 1,
-    title: 'Photo data',
-    route: '/photo',
-    description: 'Return photo data by only url',
+    title: 'Parallax',
+    route: '/parallax',
+    description: 'Parallax effect with GSAP',
   },
   {
     id: 2,
@@ -33,6 +33,12 @@ const cardItems = [
     title: 'Drag&Drop',
     route: '/dnd',
     description: 'Drag and drop elements',
+  },
+  {
+    id: 6,
+    title: 'Animations',
+    route: '/animations',
+    description: 'Some animations',
   },
 ];
 

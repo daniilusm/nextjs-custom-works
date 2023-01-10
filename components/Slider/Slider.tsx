@@ -1,5 +1,5 @@
 import { ArrowIcon } from 'assets/icons/arrow_icon';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import * as S from './Slider.styled';
 
 type Props = {
@@ -9,10 +9,6 @@ type Props = {
 const Slider = ({ children }: Props) => {
   const [active, setActive] = useState<number>(2);
   const count = React.Children.count(children);
-
-  useEffect(() => {
-    React.Children.map(children, (child, i) => console.info(children, child));
-  }, []);
 
   const MAX_VISIBILITY = 3;
 

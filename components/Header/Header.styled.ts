@@ -1,7 +1,19 @@
 import styled from 'styled-components';
+import Link from 'next/link';
+
+export const Root = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+`;
+
+export const LinkToHome = styled(Link)`
+  transform: rotateZ(90deg);
+`;
 
 export const Title = styled.h1`
-  margin-bottom: 50px;
   color: white;
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
     0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25),
