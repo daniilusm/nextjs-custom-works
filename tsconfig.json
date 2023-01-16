@@ -29,7 +29,8 @@
       "components/*": ["components/*"],
       "styles/*": ["styles/*"],
       "images/*": ["assets/images/*"],
-      "assets/*": ["assets/*"]
+      "assets/*": ["assets/*"],
+      "gsap/*": ["node_modules/gsap/*"]
     }
   },
   "include": [
