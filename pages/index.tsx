@@ -16,30 +16,30 @@ const cardItems = [
     route: '/buttons',
     description: 'Exemple button styles',
   },
-  {
-    id: 3,
-    title: 'Inputs',
-    route: '/inputs',
-    description: 'Some exemples input elements',
-  },
-  {
-    id: 4,
-    title: 'Photos slider',
-    route: '/slider',
-    description: 'Photos slider with dots',
-  },
-  {
-    id: 5,
-    title: 'Drag&Drop',
-    route: '/dnd',
-    description: 'Drag and drop elements',
-  },
-  {
-    id: 6,
-    title: 'Animations',
-    route: '/animations',
-    description: 'Some animations',
-  },
+  // {
+  //   id: 3,
+  //   title: 'Inputs',
+  //   route: '/inputs',
+  //   description: 'Some exemples input elements',
+  // },
+  // {
+  //   id: 4,
+  //   title: 'Photos slider',
+  //   route: '/slider',
+  //   description: 'Photos slider with dots',
+  // },
+  // {
+  //   id: 5,
+  //   title: 'Drag&Drop',
+  //   route: '/dnd',
+  //   description: 'Drag and drop elements',
+  // },
+  // {
+  //   id: 6,
+  //   title: 'Animations',
+  //   route: '/animations',
+  //   description: 'Some animations',
+  // },
 ];
 
 const Home = () => {
