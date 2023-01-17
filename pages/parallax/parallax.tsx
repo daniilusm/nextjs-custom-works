@@ -79,7 +79,7 @@ const parallax = () => {
           <S.FrontLayer bckImg={imgFront} />
           <S.MiddleLayer bckImg={imgMiddle1} />
           <S.MiddleLayer bckImg={imgMiddle2} />
-          <S.BackLayer bckImg={imgBack} />
+          <S.BackLayer bckImg={imgBase} />
         </S.Layers>
         <S.Block>content</S.Block>
       </div>
