@@ -2,6 +2,7 @@ import BasicLayout from 'components/Layouts/Basic';
 import PageCard from 'components/PageCard';
 import Slider from 'components/Slider';
 import Head from 'next/head';
+import React from 'react';
 
 const cardItems = [
   {

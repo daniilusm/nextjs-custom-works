@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import gsap from 'gsap-trial';
 import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
 import { ScrollSmoother } from 'gsap-trial/dist/ScrollSmoother';
-import imgBase from 'assets/images/main-img/base.jpeg';
-import imgFront from 'assets/images/main-img/witcher-front.png';
-import imgMiddle1 from 'assets/images/main-img/witcher-middle-1.png';
-import imgMiddle2 from 'assets/images/main-img/witcher-middle-2.png';
-import imgBack from 'assets/images/main-img/witcher-back.png';
+import imgBase from 'images/main-img/base.jpeg';
+import imgFront from 'images/main-img/witcher-front.png';
+import imgMiddle1 from 'images/main-img/witcher-middle-1.png';
+import imgMiddle2 from 'images/main-img/witcher-middle-2.png';
 
 import * as S from './parallax.styled';
-import { StaticImageData } from 'next/image';
 
 const sections = ['first', 'second', 'third'];
 
@@ -17,7 +15,6 @@ const parallax = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
   const [windowScrollTop, setWindowScrollTop] = useState(0);
-  // const [backgroundColor, setBackgroundColor] = useState<StaticImageData>(bg);
 
   useEffect(() => {
     // const smoother = ScrollSmoother.create({
