@@ -4,12 +4,11 @@ import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
 import { ScrollSmoother } from 'gsap-trial/dist/ScrollSmoother';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import imgBase from 'images/main-img/base.jpeg';
-import imgFront from 'images/main-img/witcher-front.png';
-import imgMiddle1 from 'images/main-img/witcher-middle-1.png';
-import imgMiddle2 from 'images/main-img/witcher-middle-2.png';
-import secondBcgImage from 'images/main-img/second-bcg.jpeg';
-import middleBcgImage from 'images/main-img/middle-bcg.jpeg';
+import imgBase from 'images/parallax/main-img/base-background.jpeg';
+import imgFront from 'images/parallax/main-img/front-background.png';
+import imgMiddle1 from 'images/parallax/main-img/middle-background.png';
+import secondBcgImage from 'images/parallax/second-bcg.jpeg';
+import middleBcgImage from 'images/parallax/middle-bcg.jpeg';
 
 import * as S from './parallax.styled';
 
@@ -57,7 +56,6 @@ const parallax = () => {
         <S.Layers>
           <S.BaseLayer bckImg={imgBase} />
           <S.MiddleLayer bckImg={imgMiddle1} />
-          <S.MiddleLayer bckImg={imgMiddle2} />
           <S.FrontLayer bckImg={imgFront} />
         </S.Layers>
         <S.MiddlePath>

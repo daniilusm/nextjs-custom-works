@@ -28,6 +28,9 @@ z-index: 2;
 export const FrontLayer = styled(Layer)`
 transform: translate3d(0, calc(var(--scrollTop)/ 5.7), 0)};
 z-index: 3;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
 `;
 
 export const Layers = styled.div`
