@@ -56,12 +56,12 @@ export const Title = styled.div<{ bckImg: any }>`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: ${({ bckImg }) => bckImg && `url(${bckImg.src})`};
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   z-index: 4;
-  font-size: 152px;
+  font-size: 300px;
   text-align: center;
   align-self: center;
 `;
