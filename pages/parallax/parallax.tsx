@@ -1,20 +1,19 @@
 import React, { useEffect, useState, useCallback } from 'react';
-// import gsap from 'gsap-trial';
-// import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
-// import { ScrollSmoother } from 'gsap-trial/dist/ScrollSmoother';
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import imgBase from 'images/parallax/main-img/base-background.jpeg';
-import imgFront from 'images/parallax/main-img/front-background-min.png';
-import imgMiddle from 'images/parallax/main-img/middle-background-min.png';
-import secondBcgImage from 'images/parallax/second-bcg.jpeg';
-import middleBcgImage from 'images/parallax/middle-bcg.jpeg';
+import firstBackgroundBase from 'images/parallax/first/base-background.jpeg';
+import firstBackgroundFront from 'images/parallax/first/front-background.png';
+import firstBackgroundMiddle from 'images/parallax/first/middle-background.png';
+import secondBackgroundBase from 'images/parallax/second/second-background-base.jpeg';
+import secondBackgroundFront from 'images/parallax/second/second-background-front.png';
 
 import * as S from './parallax.styled';
 import Head from 'next/head';
 
 const parallax = () => {
-  // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  // gsap.registerPlugin(ScrollTrigger);
 
   const particlesInit = useCallback(async (engine) => {
     console.log(engine);
@@ -26,42 +25,34 @@ const parallax = () => {
   }, []);
 
   useEffect(() => {
-    // const smoother = ScrollSmoother.create({
-    //   content: '.smooth-content',
-    //   smooth: 3,
-    //   effects: true,
-    // });
     window.addEventListener('scroll', () => {
       document.documentElement.style.setProperty(
         '--scrollTop',
         `${window.scrollY}px`
       );
     });
-
-    // const smoother = ScrollSmoother.create({
-    //   wrapper: '.smooth-wrapper',
-    //   content: '.smooth-content',
-    // });
-
-    // smoother.effects('img', { speed: 'auto' });
   }, []);
 
   return (
     <>
       <Head>
         <title>Parallax Effect</title>
+        <meta property="og:title" content="Parallax Effect" />
+        <meta
+          property="og:description"
+          content="Parallax effect using only CSS and JS"
+        />
+        {/* <meta property="og:url" content={firstBackgroundBase.src} /> */}
       </Head>
-      <S.Root className="smooth-wrapper">
-        <div className="smooth-content">
-          <S.Layers>
-            <S.BaseLayer imgSrc={imgBase.src} />
-            <S.MiddleLayer imgSrc={imgMiddle.src} />
-            <S.FrontLayer imgSrc={imgFront.src} />
-          </S.Layers>
-          <S.MiddlePath>
-            <S.Title imgSrc={middleBcgImage.src}>The Last Of Us</S.Title>
-          </S.MiddlePath>
-          <S.SecondPath imgSrc={secondBcgImage.src}>
+      <S.Root>
+        <S.Layers>
+          <S.BaseLayer imgSrc={firstBackgroundBase.src} />
+          <S.MiddleLayer imgSrc={firstBackgroundMiddle.src} />
+          <S.FrontLayer imgSrc={firstBackgroundFront.src} />
+        </S.Layers>
+        <S.SecondPath imgSrc={secondBackgroundBase.src}>
+          <S.Front imgSrc={secondBackgroundFront.src} />
+          <S.Wrapper>
             <Particles
               id="tsparticles"
               init={particlesInit}
@@ -72,11 +63,9 @@ const parallax = () => {
                   events: {
                     onClick: {
                       enable: false,
-                      mode: 'push',
                     },
                     onHover: {
                       enable: false,
-                      mode: 'repulse',
                     },
                     resize: true,
                   },
@@ -100,7 +89,7 @@ const parallax = () => {
                     speed: 2,
                     straight: false,
                   },
-                  number: { density: { enable: true, area: 800 }, value: 100 },
+                  number: { density: { enable: true, area: 800 }, value: 150 },
                   opacity: {
                     value: 0.5,
                   },
@@ -117,8 +106,8 @@ const parallax = () => {
                 detectRetina: true,
               }}
             />
-          </S.SecondPath>
-        </div>
+          </S.Wrapper>
+        </S.SecondPath>
       </S.Root>
     </>
   );

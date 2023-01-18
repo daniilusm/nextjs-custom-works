@@ -17,18 +17,18 @@ export const Layer = styled.div<{ imgSrc: string }>`
 
 export const BaseLayer = styled(Layer)`
   transform: translate3d(0, calc(var(--scrollTop)/ 1.6), 0)};
-  z-index: 1;
+  z-index: 4;
   filter: blur(5px) brightness(0.1);
 `;
 
 export const MiddleLayer = styled(Layer)`
   transform: translate3d(0, calc(var(--scrollTop)/ 2.5), 0)};
-  z-index: 2;
+  z-index: 5;
 `;
 
 export const FrontLayer = styled(Layer)`
   transform: translate3d(0, calc(var(--scrollTop)/ 5.7), 0)};
-  z-index: 3;
+  z-index: 6;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -42,14 +42,6 @@ export const Layers = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-`;
-
-export const MiddlePath = styled.div`
-  height: 500px;
-  width: 100%;
-  z-index: 4;
-  display: flex;
-  justify-content: center;
 `;
 
 export const Title = styled.div<{ imgSrc: string }>`
@@ -73,4 +65,17 @@ export const SecondPath = styled.div<{ imgSrc: string }>`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+`;
+
+export const Wrapper = styled.div``;
+
+export const Front = styled.div<{ imgSrc: string }>`
+  background-image: ${({ imgSrc }) => imgSrc && `url(${imgSrc})`};
+  height: 100%;
+  z-index: 3;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(1px);
 `;
