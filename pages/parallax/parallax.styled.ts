@@ -17,22 +17,17 @@ export const Layer = styled.div<{ bckImg: any }>`
 
 export const BaseLayer = styled(Layer)`
   transform: translate3d(0, calc(var(--scrollTop)/ 1.6), 0)};
-  z-index: 0;
-`;
-
-export const FrontLayer = styled(Layer)`
-transform: translate3d(0, calc(var(--scrollTop)/ 5.7), 0)};
-z-index: 2;
+  z-index: 1;
 `;
 
 export const MiddleLayer = styled(Layer)`
 transform: translate3d(0, calc(var(--scrollTop)/ 2.5), 0)};
-z-index: 1;
+z-index: 2;
 `;
 
-export const BackLayer = styled(Layer)`
-transform: translate3d(0, calc(var(--scrollTop)/ 1.6), 0)};
-z-index: 0;
+export const FrontLayer = styled(Layer)`
+transform: translate3d(0, calc(var(--scrollTop)/ 5.7), 0)};
+z-index: 3;
 `;
 
 export const Layers = styled.div`
@@ -44,6 +39,22 @@ export const Layers = styled.div`
   overflow: hidden;
 `;
 
-export const Block = styled.div`
+export const MiddlePath = styled.div<{ bckImg: any }>`
+  height: 150px;
+  width: 100%;
+  z-index: 4;
+  position: relative;
+  background-image: ${({ bckImg }) => bckImg && `url(${bckImg.src})`};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
+export const SecondPath = styled.div<{ bckImg: any }>`
+  position: relative;
   height: 100vh;
+  background-image: ${({ bckImg }) => bckImg && `url(${bckImg.src})`};
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 `;

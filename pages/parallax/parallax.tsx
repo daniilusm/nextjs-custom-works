@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import gsap from 'gsap-trial';
 import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
 import { ScrollSmoother } from 'gsap-trial/dist/ScrollSmoother';
+import Particles from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
 import imgBase from 'images/main-img/base.jpeg';
 import imgFront from 'images/main-img/witcher-front.png';
 import imgMiddle1 from 'images/main-img/witcher-middle-1.png';
 import imgMiddle2 from 'images/main-img/witcher-middle-2.png';
+import secondBcgImage from 'images/main-img/second-bcg.jpeg';
+import middleBcgImage from 'images/main-img/middle-bcg.jpeg';
 
 import * as S from './parallax.styled';
 
@@ -16,6 +20,15 @@ const parallax = () => {
 
   const [windowScrollTop, setWindowScrollTop] = useState(0);
 
+  const particlesInit = useCallback(async (engine) => {
+    console.log(engine);
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container);
+  }, []);
+
   useEffect(() => {
     // const smoother = ScrollSmoother.create({
     //   content: '.smooth-content',
@@ -23,7 +36,6 @@ const parallax = () => {
     //   effects: true,
     // });
     window.addEventListener('scroll', () => {
-      // console.info(window.scrollY);
       setWindowScrollTop(window.scrollY);
       document.documentElement.style.setProperty(
         '--scrollTop',
@@ -37,48 +49,75 @@ const parallax = () => {
     });
 
     smoother.effects('img', { speed: 'auto' });
-
-    // sections.forEach((section) => {
-    //   gsap.to(`#${section}`, {
-    //     scrollTrigger: {
-    //       trigger: `#${section}`,
-    //       start: 'top center',
-    //       end: 'bottom center',
-    //       onEnter: () => setActiveSection(`${section}`),
-    //       onEnterBack: () => setActiveSection(`${section}`),
-    //     },
-    //   });
-    // });
   }, []);
-
-  // useEffect(() => {
-  //   switch (activeSection) {
-  //     case 'first':
-  //       setBackgroundColor(bg);
-  //       break;
-  //     case 'second':
-  //       setBackgroundColor(bg);
-  //       break;
-  //     case 'third':
-  //       setBackgroundColor(bg2);
-  //       console.log('change');
-  //       break;
-  //     default:
-  //       setBackgroundColor(bg);
-  //   }
-  // }, [activeSection]);
 
   return (
     <S.Root className="smooth-wrapper">
       <div className="smooth-content">
         <S.Layers>
-          {/* <S.BaseLayer bckImg={imgBase} /> */}
-          <S.FrontLayer bckImg={imgFront} />
+          <S.BaseLayer bckImg={imgBase} />
           <S.MiddleLayer bckImg={imgMiddle1} />
           <S.MiddleLayer bckImg={imgMiddle2} />
-          <S.BackLayer bckImg={imgBase} />
+          <S.FrontLayer bckImg={imgFront} />
         </S.Layers>
-        <S.Block>content</S.Block>
+        <S.MiddlePath bckImg={middleBcgImage} />
+        <S.SecondPath bckImg={secondBcgImage}>
+          <Particles
+            id="tsparticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
+            options={{
+              fpsLimit: 120,
+              interactivity: {
+                events: {
+                  onClick: {
+                    enable: false,
+                    mode: 'push',
+                  },
+                  onHover: {
+                    enable: false,
+                    mode: 'repulse',
+                  },
+                  resize: true,
+                },
+                modes: {
+                  push: {
+                    quantity: 4,
+                  },
+                  repulse: {
+                    distance: 200,
+                    duration: 0.4,
+                  },
+                },
+              },
+              particles: {
+                move: {
+                  bounce: false,
+                  direction: 'none',
+                  enable: true,
+                  outModes: 'out',
+                  random: false,
+                  speed: 2,
+                  straight: false,
+                },
+                number: { density: { enable: true, area: 800 }, value: 100 },
+                opacity: {
+                  value: 0.5,
+                },
+                color: {
+                  value: '#817e60',
+                },
+                shape: {
+                  type: 'circle',
+                },
+                size: {
+                  value: { min: 1, max: 2 },
+                },
+              },
+              detectRetina: true,
+            }}
+          />
+        </S.SecondPath>
       </div>
     </S.Root>
   );
