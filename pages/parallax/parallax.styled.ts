@@ -4,8 +4,8 @@ export const Root = styled.div`
   height: 100%;
 `;
 
-export const Layer = styled.div<{ bckImg: any }>`
-  background-image: ${({ bckImg }) => bckImg && `url(${bckImg.src})`};
+export const Layer = styled.div<{ imgSrc: string }>`
+  background-image: ${({ imgSrc }) => imgSrc && `url(${imgSrc})`};
   height: 100%;
   width: 100%;
   position: absolute;
@@ -52,24 +52,24 @@ export const MiddlePath = styled.div`
   justify-content: center;
 `;
 
-export const Title = styled.div<{ bckImg: any }>`
+export const Title = styled.div<{ imgSrc: string }>`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: ${({ bckImg }) => bckImg && `url(${bckImg.src})`};
+  background-image: ${({ imgSrc }) => imgSrc && `url(${imgSrc})`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   z-index: 4;
-  font-size: 300px;
+  font-size: 200px;
   text-align: center;
   align-self: center;
 `;
 
-export const SecondPath = styled.div<{ bckImg: any }>`
+export const SecondPath = styled.div<{ imgSrc: string }>`
   position: relative;
   height: 100vh;
-  background-image: ${({ bckImg }) => bckImg && `url(${bckImg.src})`};
+  background-image: ${({ imgSrc }) => imgSrc && `url(${imgSrc})`};
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
