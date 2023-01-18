@@ -60,7 +60,9 @@ const parallax = () => {
           <S.MiddleLayer bckImg={imgMiddle2} />
           <S.FrontLayer bckImg={imgFront} />
         </S.Layers>
-        <S.MiddlePath bckImg={middleBcgImage} />
+        <S.MiddlePath>
+          <S.Title bckImg={middleBcgImage}>Last Of Us</S.Title>
+        </S.MiddlePath>
         <S.SecondPath bckImg={secondBcgImage}>
           <Particles
             id="tsparticles"

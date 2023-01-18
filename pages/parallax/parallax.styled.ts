@@ -39,15 +39,26 @@ export const Layers = styled.div`
   overflow: hidden;
 `;
 
-export const MiddlePath = styled.div<{ bckImg: any }>`
-  height: 150px;
+export const MiddlePath = styled.div`
+  height: 500px;
   width: 100%;
   z-index: 4;
-  position: relative;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Title = styled.div<{ bckImg: any }>`
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   background-image: ${({ bckImg }) => bckImg && `url(${bckImg.src})`};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background-attachment: fixed;
+  z-index: 4;
+  font-size: 152px;
+  text-align: center;
+  align-self: center;
 `;
 
 export const SecondPath = styled.div<{ bckImg: any }>`
