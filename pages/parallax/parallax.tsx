@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import gsap from 'gsap-trial';
-import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
-import { ScrollSmoother } from 'gsap-trial/dist/ScrollSmoother';
+// import gsap from 'gsap-trial';
+// import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
+// import { ScrollSmoother } from 'gsap-trial/dist/ScrollSmoother';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import imgBase from 'images/parallax/main-img/base-background.jpeg';
-import imgFront from 'images/parallax/main-img/front-background.png';
-import imgMiddle1 from 'images/parallax/main-img/middle-background.png';
+import imgFront from 'images/parallax/main-img/front-background-min.png';
+import imgMiddle1 from 'images/parallax/main-img/middle-background-min.png';
 import secondBcgImage from 'images/parallax/second-bcg.jpeg';
 import middleBcgImage from 'images/parallax/middle-bcg.jpeg';
 
@@ -15,7 +15,7 @@ import * as S from './parallax.styled';
 const sections = ['first', 'second', 'third'];
 
 const parallax = () => {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
   const [windowScrollTop, setWindowScrollTop] = useState(0);
 
@@ -42,12 +42,12 @@ const parallax = () => {
       );
     });
 
-    const smoother = ScrollSmoother.create({
-      wrapper: '.smooth-wrapper',
-      content: '.smooth-content',
-    });
+    // const smoother = ScrollSmoother.create({
+    //   wrapper: '.smooth-wrapper',
+    //   content: '.smooth-content',
+    // });
 
-    smoother.effects('img', { speed: 'auto' });
+    // smoother.effects('img', { speed: 'auto' });
   }, []);
 
   return (

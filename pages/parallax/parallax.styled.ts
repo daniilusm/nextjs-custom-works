@@ -18,19 +18,21 @@ export const Layer = styled.div<{ bckImg: any }>`
 export const BaseLayer = styled(Layer)`
   transform: translate3d(0, calc(var(--scrollTop)/ 1.6), 0)};
   z-index: 1;
+  filter: blur(5px) brightness(0.1);
 `;
 
 export const MiddleLayer = styled(Layer)`
-transform: translate3d(0, calc(var(--scrollTop)/ 2.5), 0)};
-z-index: 2;
+  transform: translate3d(0, calc(var(--scrollTop)/ 2.5), 0)};
+  z-index: 2;
 `;
 
 export const FrontLayer = styled(Layer)`
-transform: translate3d(0, calc(var(--scrollTop)/ 5.7), 0)};
-z-index: 3;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
+  transform: translate3d(0, calc(var(--scrollTop)/ 5.7), 0)};
+  z-index: 3;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  filter: blur(3px) brightness(0.7);
 `;
 
 export const Layers = styled.div`
