@@ -6,6 +6,7 @@ import { loadFull } from 'tsparticles';
 import firstBackgroundBase from 'images/parallax/first/base-background.jpeg';
 import firstBackgroundFront from 'images/parallax/first/front-background.png';
 import firstBackgroundMiddle from 'images/parallax/first/middle-background.png';
+import ground from 'images/parallax/first/ground.png';
 import secondBackgroundBase from 'images/parallax/second/second-background-base.jpeg';
 import secondBackgroundFront from 'images/parallax/second/second-background-front.png';
 
@@ -42,14 +43,16 @@ const parallax = () => {
           property="og:description"
           content="Parallax effect using only CSS and JS"
         />
-        {/* <meta property="og:url" content={firstBackgroundBase.src} /> */}
       </Head>
       <S.Root>
-        <S.Layers>
-          <S.BaseLayer imgSrc={firstBackgroundBase.src} />
-          <S.MiddleLayer imgSrc={firstBackgroundMiddle.src} />
-          <S.FrontLayer imgSrc={firstBackgroundFront.src} />
-        </S.Layers>
+        <S.FirstPath imgSrc={ground.src}>
+          <S.Layers>
+            <S.BaseLayer imgSrc={firstBackgroundBase.src} />
+            {/* <S.Title>n 2013, an outbreak of a mutant Cordyceps fungus ravages the United States, transforming its human hosts into aggressive creatures known as the Infected.</S.Title> */}
+            <S.MiddleLayer imgSrc={firstBackgroundMiddle.src} />
+            <S.FrontLayer imgSrc={firstBackgroundFront.src} />
+          </S.Layers>
+        </S.FirstPath>
         <S.SecondPath imgSrc={secondBackgroundBase.src}>
           <S.Front imgSrc={secondBackgroundFront.src} />
           <S.Wrapper>
@@ -89,7 +92,7 @@ const parallax = () => {
                     speed: 2,
                     straight: false,
                   },
-                  number: { density: { enable: true, area: 800 }, value: 150 },
+                  number: { density: { enable: true, area: 800 }, value: 250 },
                   opacity: {
                     value: 0.5,
                   },

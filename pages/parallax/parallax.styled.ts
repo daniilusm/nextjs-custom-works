@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from 'styled-components';
 
 export const Root = styled.div`
@@ -33,6 +34,23 @@ export const FrontLayer = styled(Layer)`
   background-repeat: no-repeat;
   background-position: bottom;
   filter: blur(3px) brightness(0.7);
+`;
+
+export const FirstPath = styled.div<{ imgSrc: string }>`
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: calc(calc(1vw + 1vh) * 10);
+    background-image: ${({ imgSrc }) => imgSrc && `url(${imgSrc})`};
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: calc(calc(1vw + 1vh) * -4.5);
+  }
 `;
 
 export const Layers = styled.div`
