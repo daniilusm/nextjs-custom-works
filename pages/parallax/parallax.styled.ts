@@ -50,6 +50,7 @@ export const FirstPath = styled.div<{ imgSrc: string }>`
     background-repeat: no-repeat;
     background-position: center;
     bottom: calc(calc(1vw + 1vh) * -4.5);
+    filter: blur(4px);
   }
 `;
 
@@ -62,18 +63,17 @@ export const Layers = styled.div`
   overflow: hidden;
 `;
 
-export const Title = styled.div<{ imgSrc: string }>`
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: ${({ imgSrc }) => imgSrc && `url(${imgSrc})`};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+export const MainTitle = styled.div`
   z-index: 4;
-  font-size: 200px;
+  font-size: 140px;
   text-align: center;
-  align-self: center;
+  color: black;
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+  will-change: transform;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-shadow: 0 0 15px #ece4cb;
 `;
 
 export const SecondPath = styled.div<{ imgSrc: string }>`
@@ -83,9 +83,40 @@ export const SecondPath = styled.div<{ imgSrc: string }>`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
 `;
 
-export const Wrapper = styled.div``;
+export const SubTitle = styled.div`
+  width: 700px;
+  font-size: 33px;
+  text-align: center;
+  color: black;
+  transform: translate3d(0, calc(var(--scrollTop) / -1.2), 0);
+  transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+  will-change: transform;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px #ece4cb;
+`;
+
+export const Text = styled.div`
+  width: 700px;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+  transform: translate3d(0, calc(var(--scrollTop) / -1.2), 0);
+  transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+  will-change: transform;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px #ece4cb;
+  margin: 150px 0 0 550px;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const Front = styled.div<{ imgSrc: string }>`
   background-image: ${({ imgSrc }) => imgSrc && `url(${imgSrc})`};

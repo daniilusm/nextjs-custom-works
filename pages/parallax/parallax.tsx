@@ -48,7 +48,7 @@ const parallax = () => {
         <S.FirstPath imgSrc={ground.src}>
           <S.Layers>
             <S.BaseLayer imgSrc={firstBackgroundBase.src} />
-            {/* <S.Title>n 2013, an outbreak of a mutant Cordyceps fungus ravages the United States, transforming its human hosts into aggressive creatures known as the Infected.</S.Title> */}
+            <S.MainTitle>The Last of Us</S.MainTitle>
             <S.MiddleLayer imgSrc={firstBackgroundMiddle.src} />
             <S.FrontLayer imgSrc={firstBackgroundFront.src} />
           </S.Layers>
@@ -56,6 +56,17 @@ const parallax = () => {
         <S.SecondPath imgSrc={secondBackgroundBase.src}>
           <S.Front imgSrc={secondBackgroundFront.src} />
           <S.Wrapper>
+            <S.SubTitle>
+              In 2013, an outbreak of a mutant Cordyceps fungus ravages the
+              United States, transforming its human hosts into aggressive
+              creatures known as the Infected.
+            </S.SubTitle>
+            <S.Text>
+              Twenty years later, civilization has been decimated by the
+              infection. Survivors live in totalitarian quarantine zones,
+              independent settlements, and nomadic groups, leaving buildings and
+              houses deserted.
+            </S.Text>
             <Particles
               id="tsparticles"
               init={particlesInit}
