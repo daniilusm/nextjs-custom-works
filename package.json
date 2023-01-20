@@ -10,14 +10,18 @@
   },
   "dependencies": {
     "@next/font": "^13.1.1",
+    "@react-three/drei": "^9.53.1",
+    "@react-three/fiber": "^8.10.0",
     "babel-plugin-styled-components": "^2.0.7",
     "gsap": "^3.11.4",
     "gsap-trial": "^3.11.4",
     "next": "^13.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-threejs": "^0.0.4",
     "react-tsparticles": "^2.7.1",
     "styled-components": "^5.3.6",
+    "three": "^0.148.0",
     "tsparticles": "^2.7.1"
   },
   "devDependencies": {
