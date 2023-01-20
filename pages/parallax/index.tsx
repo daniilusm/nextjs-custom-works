@@ -10,19 +10,19 @@ import ground from 'images/parallax/first/ground.png';
 import secondBackgroundBase from 'images/parallax/second/second-background-base.jpeg';
 import secondBackgroundFront from 'images/parallax/second/second-background-front.png';
 
-import * as S from './parallax.styled';
+import * as S from 'styles/pages/parallax.styled';
 import Head from 'next/head';
 
 const parallax = () => {
   // gsap.registerPlugin(ScrollTrigger);
 
   const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
+    console.info(engine);
     await loadFull(engine);
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
+    await console.info(container);
   }, []);
 
   useEffect(() => {
