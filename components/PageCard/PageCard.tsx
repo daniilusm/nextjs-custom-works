@@ -6,7 +6,6 @@ type Props = {
   item: {
     route: string;
     title: string;
-    description: string;
   };
 };
 

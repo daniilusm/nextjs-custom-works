@@ -9,37 +9,21 @@ const cardItems = [
     id: 1,
     title: 'Parallax',
     route: '/parallax',
-    description: 'Parallax effect with GSAP',
   },
   // {
   //   id: 2,
-  //   title: 'Buttons',
-  //   route: '/buttons',
-  //   description: 'Exemple button styles',
+  //   title: 'Photos slider',
+  //   route: '/slider',
   // },
   // {
   //   id: 3,
-  //   title: 'Inputs',
-  //   route: '/inputs',
-  //   description: 'Some exemples input elements',
+  //   title: 'Drag&Drop',
+  //   route: '/dnd',
   // },
   // {
   //   id: 4,
-  //   title: 'Photos slider',
-  //   route: '/slider',
-  //   description: 'Photos slider with dots',
-  // },
-  // {
-  //   id: 5,
-  //   title: 'Drag&Drop',
-  //   route: '/dnd',
-  //   description: 'Drag and drop elements',
-  // },
-  // {
-  //   id: 6,
   //   title: 'Animations',
   //   route: '/animations',
-  //   description: 'Some animations',
   // },
 ];
 
