@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Slider = ({ children }: Props) => {
-  const [active, setActive] = useState<number>(1);
+  const [active, setActive] = useState<number>(0);
   const count = React.Children.count(children);
 
   const MAX_VISIBILITY = 3;

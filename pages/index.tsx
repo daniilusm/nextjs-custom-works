@@ -11,12 +11,12 @@ const cardItems = [
     route: '/parallax',
     description: 'Parallax effect with GSAP',
   },
-  {
-    id: 2,
-    title: 'Buttons',
-    route: '/buttons',
-    description: 'Exemple button styles',
-  },
+  // {
+  //   id: 2,
+  //   title: 'Buttons',
+  //   route: '/buttons',
+  //   description: 'Exemple button styles',
+  // },
   // {
   //   id: 3,
   //   title: 'Inputs',
@@ -47,7 +47,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Title MF</title>
+        <title>Welcome</title>
       </Head>
       <BasicLayout title="Welcome">
         <Slider>

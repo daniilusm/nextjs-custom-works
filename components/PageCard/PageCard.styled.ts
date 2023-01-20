@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Colors } from 'styles/colors';
 import Link from 'next/link';
 
-export const Root = styled.div<{ isViewCard: boolean }>`
+export const Root = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,12 +10,12 @@ export const Root = styled.div<{ isViewCard: boolean }>`
   text-align: center;
 
   background: ${Colors.nero};
-  width: ${({ isViewCard }) => (isViewCard ? '900px' : '350px')};
-  height: ${({ isViewCard }) => (isViewCard ? '400px' : '250px')};
+  width: 350px;
+  height: 250px;
   padding: 3px;
   position: relative;
   border-radius: 6px;
-  cursor: ${({ isViewCard }) => (isViewCard ? 'default' : 'pointer')};
+  cursor: pointer;
   transition: all 0.5s;
 
   &::before {
@@ -49,13 +49,4 @@ export const Root = styled.div<{ isViewCard: boolean }>`
 export const Title = styled.h2`
   color: ${Colors.white};
   font-size: 42px;
-`;
-
-export const Description = styled.p`
-  color: ${Colors.white};
-  margin: 40px 0 20px;
-`;
-
-export const ViewMore = styled(Link)`
-  z-index: 1;
 `;
