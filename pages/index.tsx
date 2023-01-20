@@ -20,11 +20,11 @@ const cardItems = [
   //   title: 'Drag&Drop',
   //   route: '/dnd',
   // },
-  // {
-  //   id: 4,
-  //   title: 'Animations',
-  //   route: '/animations',
-  // },
+  {
+    id: 4,
+    title: 'Animations',
+    route: '/animations',
+  },
 ];
 
 const Home = () => {
