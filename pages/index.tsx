@@ -10,21 +10,11 @@ const cardItems = [
     title: 'Parallax',
     route: '/parallax',
   },
-  // {
-  //   id: 2,
-  //   title: 'Photos slider',
-  //   route: '/slider',
-  // },
-  // {
-  //   id: 3,
-  //   title: 'Drag&Drop',
-  //   route: '/dnd',
-  // },
-  // {
-  //   id: 4,
-  //   title: 'Animations',
-  //   route: '/animations',
-  // },
+  {
+    id: 2,
+    title: 'Gun model',
+    route: '/3d-model',
+  },
 ];
 
 const Home = () => {
