@@ -23,8 +23,8 @@ export const Stage = styled.div`
 
 export const Root = styled.div`
   perspective: 2000px;
-  width: 300px;
-  height: 400px;
+  width: 400px;
+  height: 300px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

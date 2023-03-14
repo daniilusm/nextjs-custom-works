@@ -9,34 +9,35 @@ type Props = {
 let xPos = 0;
 
 const VerticalSlider = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const refs = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    const imgs = document.querySelectorAll('.img');
+    console.info(refs);
+
+    const imgs = refs.current.length > 0 && refs.current;
     gsap
       .timeline()
-      .set('.ring', { rotationY: 180, cursor: 'grab' })
+      .set('.ring', { rotationX: 180, cursor: 'grab' })
       .set('.img', {
-        // apply transform rotations to each image
-        rotateY: (i) => i * -36,
+        rotateX: (i) => i * -36,
         transformOrigin: '50% 50% 500px',
         z: -500,
         backgroundImage: (i) =>
-          'url(https://picsum.photos/id/' + (i + 32) + '/600/400/)',
+          'url(https://picsum.photos/id/' + (i + 32) + '/400/600/)',
         backgroundPosition: (i) => getBgPos(i),
         backfaceVisibility: 'hidden',
         force3D: true,
       })
       .from('.img', {
         duration: 1.5,
-        y: 200,
+        x: 200,
         opacity: 0,
         stagger: 0.1,
         ease: 'expo',
         force3D: true,
       })
       .add(() => {
-        imgs.forEach((image) =>
+        imgs.forEach((image: HTMLDivElement) =>
           image.addEventListener('mouseenter', (e) => {
             let current = e.currentTarget;
             gsap.to('.img', {
@@ -54,28 +55,27 @@ const VerticalSlider = () => {
           })
         );
       }, '-=0.5');
-  });
+  }, []);
 
   const dragStart = (e) => {
     console.info('drag start', e);
-    if (e.touches) e.clientX = e.touches[0].clientX;
-    xPos = Math.round(e.clientX);
+    if (e.touches) e.clientY = e.touches[0].clientY;
+    xPos = Math.round(e.clientY);
     gsap.set('.ring', { cursor: 'grabbing' });
     document.addEventListener('mousemove', drag);
   };
 
   const drag = (e) => {
-    console.info('drag');
-    if (e.touches) e.clientX = e.touches[0].clientX;
+    if (e.touches) e.clientY = e.touches[0].clientY;
 
     gsap.to('.ring', {
-      rotationY: '-=' + ((Math.round(e.clientX) - xPos) % 360),
+      rotationX: '-=' + ((Math.round(e.clientY) - xPos) % 360),
       onUpdate: () => {
         gsap.set('.img', { backgroundPosition: (i) => getBgPos(i) });
       },
     });
 
-    xPos = Math.round(e.clientX);
+    xPos = Math.round(e.clientY);
   };
 
   const dragEnd = (e) => {
@@ -85,11 +85,11 @@ const VerticalSlider = () => {
   };
 
   const getBgPos = (i) => {
-    const rotY = gsap.getProperty('.ring', 'rotationY');
+    const rotY = gsap.getProperty('.ring', 'rotationX');
     return (
-      100 -
-      (gsap.utils.wrap(0, 360, +rotY - 180 - i * 36) / 360) * 500 +
-      'px 0px'
+      '0px ' +
+      (100 - (gsap.utils.wrap(0, 360, +rotY - 180 - i * 36) / 360) * 500) +
+      'px'
     );
   };
 
@@ -99,19 +99,18 @@ const VerticalSlider = () => {
   }, []);
 
   return (
-    <S.Stage ref={ref}>
+    <S.Stage>
       <S.Root>
         <div className="ring">
-          <div className="img"></div>
-          <div className="img"></div>
-          <div className="img"></div>
-          <div className="img"></div>
-          <div className="img"></div>
-          <div className="img"></div>
-          <div className="img"></div>
-          <div className="img"></div>
-          <div className="img"></div>
-          <div className="img"></div>
+          {[...new Array(10)].map((item, index) => (
+            <div
+              className="img"
+              key={index}
+              ref={(element) => {
+                refs.current[index] = element;
+              }}
+            ></div>
+          ))}
         </div>
       </S.Root>
     </S.Stage>
