@@ -30,7 +30,7 @@ const VerticalSlider = () => {
       })
       .from('.img', {
         duration: 1.5,
-        x: 200,
+        y: -200,
         opacity: 0,
         stagger: 0.1,
         ease: 'expo',
@@ -58,7 +58,7 @@ const VerticalSlider = () => {
   }, []);
 
   const dragStart = (e) => {
-    console.info('drag start', e);
+    // console.info('drag start', e);
     if (e.touches) e.clientY = e.touches[0].clientY;
     xPos = Math.round(e.clientY);
     gsap.set('.ring', { cursor: 'grabbing' });
@@ -66,6 +66,7 @@ const VerticalSlider = () => {
   };
 
   const drag = (e) => {
+    console.info(e);
     if (e.touches) e.clientY = e.touches[0].clientY;
 
     gsap.to('.ring', {
@@ -79,16 +80,15 @@ const VerticalSlider = () => {
   };
 
   const dragEnd = (e) => {
-    console.info('drag end');
     document.removeEventListener('mousemove', drag);
     gsap.set('.ring', { cursor: 'grab' });
   };
 
   const getBgPos = (i) => {
-    const rotY = gsap.getProperty('.ring', 'rotationX');
+    const rotX = gsap.getProperty('.ring', 'rotationX');
     return (
       '0px ' +
-      (100 - (gsap.utils.wrap(0, 360, +rotY - 180 - i * 36) / 360) * 500) +
+      (100 - (gsap.utils.wrap(0, 360, +rotX - 180 - i * 36) / 360) * 500) +
       'px'
     );
   };
