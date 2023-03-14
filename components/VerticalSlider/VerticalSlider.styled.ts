@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Stage = styled.div`
   width: 100%;
   height: 100%;
-  min-height: 700px;
+  min-height: 100vh;
   transform-style: preserve-3d;
   user-select: none;
   overflow: hidden;

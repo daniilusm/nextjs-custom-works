@@ -37,23 +37,23 @@ const VerticalSlider = () => {
         force3D: true,
       })
       .add(() => {
-        imgs.forEach((image: HTMLDivElement) =>
-          image.addEventListener('mouseenter', (e) => {
-            let current = e.currentTarget;
-            gsap.to('.img', {
-              opacity: (i, t) => (t == current ? 1 : 0.5),
-              ease: 'power3',
+        imgs.forEach((image: HTMLDivElement) => {
+          if (image) {
+            image.addEventListener('mouseenter', (e) => {
+              let current = e.currentTarget;
+              gsap.to('.img', {
+                opacity: (i, t) => (t == current ? 1 : 0.5),
+                ease: 'power3',
+              });
             });
-          })
-        );
-        imgs.forEach((image) =>
-          image.addEventListener('mouseleave', (e) => {
-            gsap.to('.img', {
-              opacity: 1,
-              ease: 'power2.inOut',
+            image.addEventListener('mouseleave', (e) => {
+              gsap.to('.img', {
+                opacity: 1,
+                ease: 'power2.inOut',
+              });
             });
-          })
-        );
+          }
+        });
       }, '-=0.5');
   }, []);
 
