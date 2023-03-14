@@ -1,6 +1,7 @@
 import BasicLayout from 'components/Layouts/Basic';
 import PageCard from 'components/PageCard';
 import Slider from 'components/Slider';
+import VerticalSlider from 'components/VerticalSlider';
 import Head from 'next/head';
 import React from 'react';
 
@@ -23,13 +24,14 @@ const Home = () => {
       <Head>
         <title>Welcome</title>
       </Head>
-      <BasicLayout title="Welcome">
-        <Slider>
+      {/* <BasicLayout title="Welcome"> */}
+      {/* <Slider>
           {cardItems.map((item) => (
             <PageCard key={item.id} item={item} />
           ))}
-        </Slider>
-      </BasicLayout>
+        </Slider> */}
+      <VerticalSlider />
+      {/* </BasicLayout> */}
     </>
   );
 };
