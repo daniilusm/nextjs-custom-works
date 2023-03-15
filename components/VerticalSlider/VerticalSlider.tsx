@@ -53,12 +53,12 @@ const VerticalSlider = () => {
       }, '-=0.5');
   }, []);
 
-  const dragStart = (e) => {
-    if (e.touches) e.clientY = e.touches[0].clientY;
-    yPos = Math.round(e.clientY);
-    gsap.set('.ring', { cursor: 'grabbing' });
-    document.addEventListener('mousemove', drag);
-  };
+  // const dragStart = (e) => {
+  //   if (e.touches) e.clientY = e.touches[0].clientY;
+  //   yPos = Math.round(e.clientY);
+  //   gsap.set('.ring', { cursor: 'grabbing' });
+  //   document.addEventListener('mousemove', drag);
+  // };
 
   const drag = (e) => {
     if (e.touches) e.clientY = e.touches[0].clientY;
@@ -73,10 +73,10 @@ const VerticalSlider = () => {
     yPos = Math.round(e.clientY);
   };
 
-  const dragEnd = (e) => {
-    document.removeEventListener('mousemove', drag);
-    gsap.set('.ring', { cursor: 'grab' });
-  };
+  // const dragEnd = (e) => {
+  //   document.removeEventListener('mousemove', drag);
+  //   gsap.set('.ring', { cursor: 'grab' });
+  // };
 
   const getBgPos = (i) => {
     const rotX = gsap.getProperty('.ring', 'rotationX');
@@ -88,8 +88,9 @@ const VerticalSlider = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', dragStart);
-    document.addEventListener('mouseup', dragEnd);
+    document.addEventListener('mousemove', drag);
+    // document.addEventListener('mousedown', dragStart);
+    // document.addEventListener('mouseup', dragEnd);
   }, []);
 
   return (
