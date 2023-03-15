@@ -1,3 +1,4 @@
+import BlurTitle from 'components/BlurTitle';
 import BasicLayout from 'components/Layouts/Basic';
 import PageCard from 'components/PageCard';
 import Slider from 'components/Slider';
@@ -30,7 +31,8 @@ const Home = () => {
             <PageCard key={item.id} item={item} />
           ))}
         </Slider> */}
-      <VerticalSlider />
+      {/* <VerticalSlider /> */}
+      <BlurTitle />
       {/* </BasicLayout> */}
     </>
   );

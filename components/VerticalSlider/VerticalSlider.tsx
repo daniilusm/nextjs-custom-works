@@ -58,7 +58,7 @@ const VerticalSlider = () => {
   }, []);
 
   const dragStart = (e) => {
-    console.info('drag start', e);
+    // console.info('drag start', e);
     if (e.touches) e.clientY = e.touches[0].clientY;
     xPos = Math.round(e.clientY);
     gsap.set('.ring', { cursor: 'grabbing' });

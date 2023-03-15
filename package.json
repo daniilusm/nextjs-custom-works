@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-threejs": "^0.0.4",
     "react-tsparticles": "^2.7.1",
+    "simplex-noise": "^4.0.1",
     "styled-components": "^5.3.6",
     "three": "^0.150.1",
     "tsparticles": "^2.7.1"
