@@ -25,15 +25,15 @@ const Home = () => {
       <Head>
         <title>Welcome</title>
       </Head>
-      {/* <BasicLayout title="Welcome"> */}
-      {/* <Slider>
+      <BasicLayout title="Welcome">
+        <Slider>
           {cardItems.map((item) => (
             <PageCard key={item.id} item={item} />
           ))}
-        </Slider> */}
-      {/* <VerticalSlider /> */}
-      <BlurTitle />
-      {/* </BasicLayout> */}
+        </Slider>
+        {/* <VerticalSlider /> */}
+        {/* <BlurTitle /> */}
+      </BasicLayout>
     </>
   );
 };
