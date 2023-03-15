@@ -7,16 +7,9 @@ export const Stage = styled.div`
   transform-style: preserve-3d;
   user-select: none;
   overflow: hidden;
-  background: #000;
+  background: #d4ccc6;
 
-  html,
-  body {
-    overflow: hidden;
-    background: #000;
-  }
-
-  div,
-  svg {
+  div {
     position: absolute;
   }
 `;
@@ -28,14 +21,18 @@ export const Root = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+`;
 
-  html,
-  body,
-  .ring,
-  .img {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    user-select: none;
-  }
+export const Ring = styled.div`
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  user-select: none;
+`;
+
+export const ImageBlock = styled.div`
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  user-select: none;
 `;

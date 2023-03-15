@@ -23,7 +23,7 @@ const VerticalSlider = () => {
         transformOrigin: '50% 50% 500px',
         z: -500,
         backgroundImage: (i) =>
-          'url(https://picsum.photos/id/' + (i + 32) + '/400/600/)',
+          'url(https://picsum.photos/id/' + (i + 22) + '/400/600?grayscale)',
         backgroundPosition: (i) => getBgPos(i),
         backfaceVisibility: 'hidden',
         force3D: true,
@@ -58,7 +58,7 @@ const VerticalSlider = () => {
   }, []);
 
   const dragStart = (e) => {
-    // console.info('drag start', e);
+    console.info('drag start', e);
     if (e.touches) e.clientY = e.touches[0].clientY;
     xPos = Math.round(e.clientY);
     gsap.set('.ring', { cursor: 'grabbing' });
@@ -101,17 +101,17 @@ const VerticalSlider = () => {
   return (
     <S.Stage>
       <S.Root>
-        <div className="ring">
+        <S.Ring className="ring">
           {[...new Array(10)].map((item, index) => (
-            <div
+            <S.Ring
               className="img"
               key={index}
               ref={(element) => {
                 refs.current[index] = element;
               }}
-            ></div>
+            ></S.Ring>
           ))}
-        </div>
+        </S.Ring>
       </S.Root>
     </S.Stage>
   );
