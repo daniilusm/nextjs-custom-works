@@ -2,23 +2,19 @@ import React, { useRef, useEffect } from 'react';
 import * as S from './VerticalSlider.styled';
 import gsap from 'gsap';
 
-type Props = {
-  children: any;
-};
-
-let xPos = 0;
+let yPos = 0;
 
 const VerticalSlider = () => {
-  const refs = useRef<HTMLDivElement[]>([]);
+  const tl = useRef<ReturnType<typeof gsap.timeline>>();
 
   useEffect(() => {
-    console.info(refs);
+    tl.current = gsap.timeline();
 
-    const imgs = refs.current.length > 0 && refs.current;
-    gsap
-      .timeline()
+    const imgs = document.querySelectorAll('.img');
+    tl.current
       .set('.ring', { rotationX: 180, cursor: 'grab' })
-      .set('.img', {
+      .to('.img', {
+        duration: 0,
         rotateX: (i) => i * -36,
         transformOrigin: '50% 50% 500px',
         z: -500,
@@ -58,25 +54,23 @@ const VerticalSlider = () => {
   }, []);
 
   const dragStart = (e) => {
-    // console.info('drag start', e);
     if (e.touches) e.clientY = e.touches[0].clientY;
-    xPos = Math.round(e.clientY);
+    yPos = Math.round(e.clientY);
     gsap.set('.ring', { cursor: 'grabbing' });
     document.addEventListener('mousemove', drag);
   };
 
   const drag = (e) => {
-    console.info(e);
     if (e.touches) e.clientY = e.touches[0].clientY;
 
     gsap.to('.ring', {
-      rotationX: '-=' + ((Math.round(e.clientY) - xPos) % 360),
+      rotationX: '-=' + ((Math.round(e.clientY) - yPos) % 360),
       onUpdate: () => {
         gsap.set('.img', { backgroundPosition: (i) => getBgPos(i) });
       },
     });
 
-    xPos = Math.round(e.clientY);
+    yPos = Math.round(e.clientY);
   };
 
   const dragEnd = (e) => {
@@ -103,13 +97,7 @@ const VerticalSlider = () => {
       <S.Root>
         <S.Ring className="ring">
           {[...new Array(10)].map((item, index) => (
-            <S.Ring
-              className="img"
-              key={index}
-              ref={(element) => {
-                refs.current[index] = element;
-              }}
-            ></S.Ring>
+            <S.Ring className="img" key={index}></S.Ring>
           ))}
         </S.Ring>
       </S.Root>
